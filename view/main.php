@@ -24,8 +24,19 @@
       </div>
     </div>
   </nav>
+  <header class="masthead">
+    <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+      <div class="d-flex justify-content-center">
+        <div class="text-center">
+          <h1 class="mx-auto my-0 text-uppercase">Form head</h1>
+          <h2 class="text-white-50 mx-auto mt-2 mb-5">form description</h2>
 
-  <!-- form to get all the playlist information-->
+          <!-- form to get all the playlist information-->
+
+        </div>
+      </div>
+    </div>
+  </header>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="./view/bootstrap-theme/theme.js"></script>
