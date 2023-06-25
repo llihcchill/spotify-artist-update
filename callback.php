@@ -17,11 +17,10 @@
       "json" => true
     );
 
-    http_request($data,
-      "Authorization: Basic " . base64_encode($client_id . ":" . $client_secret),
-      "POST", $url
-    );
-    $decode = json_decode($result);
+    $header = "Authorization: Basic " . base64_encode($client_id . ":" . $client_secret);
+
+    $req = http_request($data, $header, "POST", $url);
+    $decode = json_decode($req);
 
     $access_token = $decode->access_token;
     $refresh_token = $decode->refresh_token;
