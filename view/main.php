@@ -31,8 +31,7 @@
           <h1 class="mx-auto my-0 text-uppercase">Get all the new songs from your favourate artists</h1>
           <h2 class="text-white-50 mx-auto mt-2 mb-5">
             Before you log in to spotify, first create a playlist containing a song from every artist
-            you want to get up to date with, and be prepared with a playlist containing the songs you know
-            from those artists (like your liked playlist (haha get it?)).
+            you want to get up to date with.
           </h2>
           <?php
             require_once("./controller/login.php");
