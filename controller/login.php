@@ -1,6 +1,4 @@
 <?php
-  use Symfony\Component\HttpClient\HttpClient;
-
   // set the client ID and redirect URI to process if the Spotify login was a success
   $client_id = "CLIENT_ID";
   $redirect_uri = "http://localhost:8080/callback";
@@ -19,13 +17,4 @@
   );
 
   $url_query = http_build_query($query_array);
-
-
-  // create an HTTP client to send HTTP requests
-  $client = HttpClient::create();
-  $request = $client->request(
-    "GET",
-    $url_query,
-    // add header
-  );
 ?>
