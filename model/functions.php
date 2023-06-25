@@ -8,11 +8,12 @@
       )
     );
     $context = stream_context_create($options);
-    global $result;
     $result = file_get_contents($url, false, $context);
 
     if ($result === FALSE) {
-      return error_log("HTTP/1.1 request has failed, as it could not get the results of the request.");
+      return error_log("HTTP/1.1 request has failed, could not get the results of the request.");
+    } else {
+      return $result;
     }
   }
 ?>
