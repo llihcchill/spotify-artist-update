@@ -1,7 +1,7 @@
 <?php
   // set the client ID and redirect URI to process if the Spotify login was a success
   $client_id = "CLIENT_ID";
-  $redirect_uri = "http://localhost:8080/callback";
+  $redirect_uri = "http://localhost:8080/callback.php";
 
   // to protect against certain attacks, a random alpha-numeric hash will be created and put as a state
   $random_number = rand();
