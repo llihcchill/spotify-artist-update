@@ -1,12 +1,11 @@
 <?php
   require_once("./model/functions.php");
+  require_once("./controller/login.php");
 
   $code = $_GET["code"];
   $state = $_GET["state"];
   $client_secret = "CLIENT_SECRET";
   $url = "https://accounts.spotify.com/api/token";
-
-  require_once("./controller/login.php");
 
   if($code === null) {
     return require_once("./view/main.php");
