@@ -1,5 +1,5 @@
 <?php
-  require_once("./functions.php");
+  require_once("./model/functions.php");
 
   $code = $_GET["code"];
   $state = $_GET["state"];
