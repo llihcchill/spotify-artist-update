@@ -11,7 +11,7 @@
   $query_array = array(
     "response_type" => "code",
     "client_id" => $client_id,
-    "scope" => "playlist-read-private playlist-modify-private",
+    "scope" => "playlist-read-private playlist-modify-private user-read-private user-read-email",
     "redirect_uri" => $redirect_uri,
     "state" => $state
   );
