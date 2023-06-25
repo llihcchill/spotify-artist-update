@@ -16,10 +16,6 @@
       "json" => true
     );
 
-    $headers = array(
-      "Authorization" => "Basic " . base64_encode($client_id . ":" . $client_secret)
-    );
-
     $options = array(
       "http" => array(
         "header" => "Authorization: Basic " . base64_encode($client_id . ":" . $client_secret),
