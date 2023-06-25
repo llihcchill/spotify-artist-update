@@ -1,5 +1,5 @@
 {
     "require": {
-        "nategood/httpful": "*"
+        "symfony/http-client": "^6.3"
     }
 }
