@@ -25,5 +25,7 @@
 
     $access_token = $decode->access_token;
     $refresh_token = $decode->refresh_token;
+
+    return require_once("./controller/api-request.php");
   }
 ?>
