@@ -20,4 +20,6 @@
 
   $item = $playlist_decode->item;
   $owner_id = $i->owner->id;
+
+  return require_once("./view/update.php");
 ?>
