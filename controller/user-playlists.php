@@ -2,6 +2,7 @@
   require_once("../model/functions.php");
   require_once("../callback.php");
 
+  session_start();
   $header = "Authorization: Bearer " . $_SESSION["access_token"];
   $data = array();
 
@@ -15,10 +16,12 @@
   $playlist_req = http_request($data, $header, "GET", "https://api.spotify.com/v1/users/" . $spotify_id . "/playlists");
   $playlist_decode = json_decode($playlist_req);
 
-  session_start();
   $_SESSION["item"] = $playlist_decode->item;
-  $_SESSION["owner_id"] = $i->owner->id;
-  // add more variables, debug whatever $i is first
+  $_SESSION["owner_id"] = $playlist_decode->owner->id;
+  $_SESSION["item_id"] = $playlist_decode->id;
+  $_SESSION["playlist_name"] = $playlist_decode->name;
+  $_SESSION["image"] = $playlist_decode->images->url;
+
 
   header("Location: http://localhost:8080/view/update.php");
   exit();
