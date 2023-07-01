@@ -29,23 +29,20 @@
     </div>
   </nav>
 
-  <?php
-    foreach ($item as $i) {
-        if ($owner_id !== $_SESSION["spotify_id"]) {
-          break;
-        } else {
-  ?>
-          <div class="card" style="width: 300px; height: 300px">
-            <img src=<?php $_SESSION["image"]; ?>>
-          </div>
-
-  <!-- card with all the playlists -->
-
-  <?php
-    // closes the foreach loop, take note, very interesting
-      }
+<?php
+  foreach ($_SESSION["items"] as $_SESSION["item"]) {
+    if ($_SESSION["item"]->owner->id !== $_SESSION["spotify_id"]) {
+      break;
+    } else {
+?>
+      <div class="card" style="width: 300px; height: 300px">
+        <img src=<?php $_SESSION["item"]->images[0]->url; ?>>
+      </div>
+<?php
+      // closes the foreach loop, take note, very interesting
     }
-  ?>
+  }
+?>
 
   <!-- footer (use footer class) -->
 
