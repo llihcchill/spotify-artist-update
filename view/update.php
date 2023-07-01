@@ -36,10 +36,10 @@
         } else {
     ?>
           <div class="col">
-            <div class="card" style="width: 250px">
+            <div class="card mb-3" style="width: 250px">
               <?php echo '<img class="card-img-top" src="' . $_SESSION["item"]->images[0]->url . '" style="height: 250px">'?>
               <div class="card-body">
-                <p class="card-text"><?php echo $_SESSION["item"]->name; ?></p>
+                <p class="card-text" style="overflow-y: scroll; height: 25px"><?php echo $_SESSION["item"]->name; ?></p>
               </div>
             </div>
           </div>
