@@ -10,7 +10,7 @@
   $user_req = http_request($data, $header, "GET", "https://api.spotify.com/v1/me");
   $decode = json_decode($user_req);
 
-  $spotify_id = $decode->id;
+  $_SESSION["spotify_id"] = $decode->id;
 
   // make an HTTP request to the Spotify API to get all of the current user's playlists
   $playlist_req = http_request($data, $header, "GET", "https://api.spotify.com/v1/users/" . $spotify_id . "/playlists");
