@@ -28,21 +28,27 @@
       </div>
     </div>
   </nav>
-
-<?php
-  foreach ($_SESSION["items"] as $_SESSION["item"]) {
-    if ($_SESSION["item"]->owner->id !== $_SESSION["spotify_id"]) {
-      break;
-    } else {
-?>
-      <div class="card" style="width: 300px; height: 300px">
-        <img src=<?php $_SESSION["item"]->images[0]->url; ?>>
-      </div>
-<?php
-      // closes the foreach loop, take note, very interesting
-    }
-  }
-?>
+  <div class="row row-cols-6 g-6 mt-5 pt-5 ms-3 me-3">
+    <?php
+      foreach ($_SESSION["items"] as $_SESSION["item"]) {
+        if ($_SESSION["item"]->owner->id !== $_SESSION["spotify_id"]) {
+          break;
+        } else {
+    ?>
+          <div class="col">
+            <div class="card" style="width: 250px">
+              <?php echo '<img class="card-img-top" src="' . $_SESSION["item"]->images[0]->url . '" style="height: 250px">'?>
+              <div class="card-body">
+                <p class="card-text"><?php echo $_SESSION["item"]->name; ?></p>
+              </div>
+            </div>
+          </div>
+    <?php
+          // closes the foreach loop, take note, very interesting
+        }
+      }
+    ?>
+  </div>
 
   <!-- footer (use footer class) -->
 
