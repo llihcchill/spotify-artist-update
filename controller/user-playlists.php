@@ -16,12 +16,12 @@
   $playlist_req = http_request($data, $header, "GET", "https://api.spotify.com/v1/users/" . $spotify_id . "/playlists");
   $playlist_decode = json_decode($playlist_req);
 
-  $_SESSION["item"] = $playlist_decode->item;
-  $_SESSION["owner_id"] = $playlist_decode->owner->id;
-  $_SESSION["item_id"] = $playlist_decode->id;
-  $_SESSION["playlist_name"] = $playlist_decode->name;
-  $_SESSION["image"] = $playlist_decode->images->url;
-
+  // set all the JSON data needed for the playlist and store them in the browser session
+  $_SESSION["item"] = $playlist_decode->items;
+  $_SESSION["owner_id"] = $playlist_decode->items[0]->owner->id;
+  $_SESSION["item_id"] = $playlist_decode->items[0]->id;
+  $_SESSION["playlist_name"] = $playlist_decode->items[0]->name;
+  $_SESSION["image"] = $playlist_decode->items[0]->images[0]->url;
 
   header("Location: http://localhost:8080/view/update.php");
   exit();
