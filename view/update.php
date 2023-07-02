@@ -44,19 +44,30 @@
             </div>
           </div>
     <?php
-          // closes the foreach loop, take note, very interesting
+    }
+    // max number of items being requested from the Spotify API
+    $limit = 50;
+
+    for($i = 0; $i <= $_SESSION["playlist_http_requests"]; $i++) {
+      $total_playlist_requests = http_request(
+        array(),
+        $_SESSION["header"],
+        "GET",
+        "https://api.spotify.com/v1/me/playlists?offset=" . $i*$limit . "&limit=" . $limit
+      );
+      $total_playlist_requests_json = json_decode($total_playlist_requests);
+      foreach($total_playlist_requests_json->items as $_SESSION["item"]) {
+  ?>
+        <div class="col">
+          <div class="card mb-3" style="width: 250px">
+            <img class="card-img-to" style="height:250px" src="<?php echo $_SESSION["item"]->images[0]->url; ?>">
+            <div class="card-body bg-black">
+              <p class="card-text text-light" style="overflow-y: scroll; height: 25px"><?php echo $_SESSION["item"]->name; ?></p>
+            </div>
+          </div>
+        </div>
+    <?php
         }
-      }
-      // max number of items being requested from the Spotify API
-      $limit = 50;
-      for($i = 0; $i <= $_SESSION["playlist_http_requests"]; $i++) {
-        $total_playlist_requests = http_request(
-          array(),
-          $_SESSION["header"],
-          "GET",
-          "https://api.spotify.com/v1/me/playlists?offset=" . $i*$limit . "&limit=" . $limit
-        );
-        $total_playlist_requests_json = json_decode($total_playlist_requests);
       }
     ?>
   </div>
