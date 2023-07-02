@@ -29,22 +29,9 @@
     </div>
   </nav>
   <div class="row row-cols-6 g-6 mt-5 pt-5 ms-3 me-3">
-    <?php
-      foreach ($_SESSION["items"] as $_SESSION["item"]) {
-        if ($_SESSION["item"]->owner->id !== $_SESSION["spotify_id"]) {
-          break;
-        } else {
-    ?>
-          <div class="col">
-            <div class="card mb-3" style="width: 250px">
-              <img class="card-img-to" style="height:250px" src="<?php echo $_SESSION["item"]->images[0]->url; ?>">
-              <div class="card-body bg-black">
-                <p class="card-text text-light" style="overflow-y: scroll; height: 25px"><?php echo $_SESSION["item"]->name; ?></p>
-              </div>
-            </div>
-          </div>
-    <?php
-    }
+  <?php
+    require_once("../model/functions.php");
+
     // max number of items being requested from the Spotify API
     $limit = 50;
 
@@ -57,19 +44,10 @@
       );
       $total_playlist_requests_json = json_decode($total_playlist_requests);
       foreach($total_playlist_requests_json->items as $_SESSION["item"]) {
-  ?>
-        <div class="col">
-          <div class="card mb-3" style="width: 250px">
-            <img class="card-img-to" style="height:250px" src="<?php echo $_SESSION["item"]->images[0]->url; ?>">
-            <div class="card-body bg-black">
-              <p class="card-text text-light" style="overflow-y: scroll; height: 25px"><?php echo $_SESSION["item"]->name; ?></p>
-            </div>
-          </div>
-        </div>
-    <?php
-        }
+        playlist_filter($_SESSION["item"]);
       }
-    ?>
+    }
+  ?>
   </div>
 
   <!-- footer (use footer class) -->
