@@ -14,6 +14,7 @@
   $user_playlist_http_request_json = json_decode($user_playlist_http_request);
 
   // set the item JSON data needed for the playlists and store them in the browser session
+  $_SESSION["playlist_total_requests"] = ceil($user_playlist_http_request_json->total / 50);
   $_SESSION["items"] = $playlist_decode->items;
 
   header("Location: http://localhost:8080/view/update.php");
