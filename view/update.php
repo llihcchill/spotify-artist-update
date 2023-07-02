@@ -47,6 +47,17 @@
           // closes the foreach loop, take note, very interesting
         }
       }
+      // max number of items being requested from the Spotify API
+      $limit = 50;
+      for($i = 0; $i <= $_SESSION["playlist_http_requests"]; $i++) {
+        $total_playlist_requests = http_request(
+          array(),
+          $_SESSION["header"],
+          "GET",
+          "https://api.spotify.com/v1/me/playlists?offset=" . $i*$limit . "&limit=" . $limit
+        );
+        $total_playlist_requests_json = json_decode($total_playlist_requests);
+      }
     ?>
   </div>
 
