@@ -27,7 +27,7 @@
           <label for="<?php echo $_SESSION["item"]->uri; ?>">
             <img src="<?php echo $_SESSION["item"]->images[0]->url; ?>" class="card-img-top" style="height: 250px;"/>
           </label>
-          <input id="<?php echo $_SESSION["item"]->uri; ?>" name="<?php echo $_SESSION["item"]->uri; ?>" type="checkbox">
+          <input id="<?php echo $_SESSION["item"]->uri; ?>" name="<?php echo $_SESSION["item"]->uri; ?>" type="checkbox" form="playlist-form">
           <div class="card-body bg-black">
             <p class="card-text text-light" style="overflow-y: scroll; height: 25px"><?php echo $_SESSION["item"]->name; ?></p>
           </div>
