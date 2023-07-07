@@ -49,8 +49,22 @@
     }
   ?>
   </div>
-
-  <!-- footer (use footer class) -->
+  
+    <style>
+      .footer_ {
+        position: sticky;
+        width: 100%;
+        text-align: left;
+        margin-top: 24%;
+        background-color: white;
+      }
+    </style>
+    <div class="footer_">
+      <form action="./update-last.php" id="playlist-form">
+        <input type="button"/>
+      </form>
+    </div>
+  </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
