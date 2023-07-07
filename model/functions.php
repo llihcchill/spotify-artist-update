@@ -24,7 +24,10 @@
 ?>
       <div class="col">
         <div class="card mb-3" style="width: 250px">
-          <img class="card-img-to" style="height:250px" src="<?php echo $_SESSION["item"]->images[0]->url; ?>">
+          <label for="<?php echo $_SESSION["item"]->uri; ?>">
+            <img src="<?php echo $_SESSION["item"]->images[0]->url; ?>" class="card-img-top" style="height: 250px;"/>
+          </label>
+          <input id="<?php echo $_SESSION["item"]->uri; ?>" name="<?php echo $_SESSION["item"]->uri; ?>" type="checkbox">
           <div class="card-body bg-black">
             <p class="card-text text-light" style="overflow-y: scroll; height: 25px"><?php echo $_SESSION["item"]->name; ?></p>
           </div>
