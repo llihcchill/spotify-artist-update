@@ -53,6 +53,8 @@
     <style>
       .footer_ {
         position: sticky;
+        left: 0;
+        bottom: 0;
         width: 100%;
         text-align: left;
         margin-top: 24%;
